@@ -1,0 +1,145 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <title>Water Pollution</title> 
+    <!-- INTERNAL CSS ONLY --> 
+    <style> 
+        body { 
+            font-family: 'Arial', sans-serif; 
+            margin: 0; 
+            padding: 30px; 
+            background-image: url('https://images.unsplash.com/photo-1500530855697
+b586d89ba3ee'); 
+            background-size: cover; 
+            background-attachment: fixed; 
+            display: flex; 
+            justify-content: center; 
+        } 
+ 
+        .container { 
+            background-color: rgba(255, 255, 255, 0.95); 
+            max-width: 900px; 
+            padding: 30px; 
+            border-radius: 10px; 
+            box-shadow: 0 0 20px rgba(0,0,0,0.2); 
+            text-align: center; 
+        } 
+ 
+        h1 { 
+            color: #c0392b; 
+        } 
+ 
+        .text-content { 
+            text-align: left; 
+            line-height: 1.6; 
+        } 
+ 
+        /* FIXED IMAGE SIZE FOR IMAGE MAP */ 
+        #main-pollution-image { 
+            border: 4px solid #2c3e50; 
+            border-radius: 5px; 
+            width: 850px; 
+            height: 500px; 
+            display: block; 
+            margin: 20px auto; 
+            cursor: pointer; 
+            background-color: #f0f0f0; 
+        } 
+        picture img { 
+    width: 100%; 
+    max-width: 100%; 
+    height: auto; 
+    display: block; 
+    margin: 0 auto; 
+    border-radius: 5px; 
+} 
+ 
+    </style> 
+ 
+    <!-- BASIC JAVASCRIPT --> 
+    <script> 
+        function showAlert(message) { 
+            alert(message); 
+        } 
+    </script> 
+</head> 
+ 
+<body> 
+ 
+<div class="container"> 
+ 
+    <h1>Water Pollution Awareness</h1> 
+ 
+    <div class="text-content"> 
+        <p>Water pollution is a critical environmental issue that affects ecosystems, human health, 
+and the overall quality of life.  
+            It occurs when harmful substances, such as chemicals, waste, and microorganisms,  
+            contaminate water bodies like rivers, lakes, and oceans.  
+            This webpage aims to raise awareness about the various sources of water pollution and 
+their  
+            detrimental effects on the environment.</p> 
+ 
+        <p> 
+            <strong>Purpose:</strong> This webpage uses images and interactive elements to 
+visually 
+            demonstrate different sources of water pollution and their impact on the environment. 
+        </p> 
+    </div> 
+ 
+    <!-- MAIN IMAGE WITH IMAGE MAP --> 
+    <img src="https://images.unsplash.com/photo-1637681316418
+dd7a4b6e545e?q=80&w=1074&auto=format&fit=crop&ixlib=rb
+4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+         alt="Industrial pipes polluting a river" 
+         usemap="#pollution_map" 
+         id="main-pollution-image"> 
+ 
+    <map name="pollution_map"> 
+ 
+        <!-- RECTANGLE: INDUSTRIAL PIPES --> 
+        <area shape="rect" 
+              coords="680,140,820,240" 
+              href="javascript:void(0)" 
+              onclick="showAlert('Industrial pipes discharge untreated toxic waste into rivers, causing 
+severe water pollution.')"> 
+ 
+        <!-- CIRCLE: CHEMICAL WASTE FLOW --> 
+        <area shape="circle" 
+              coords="575,235,40" 
+              href="javascript:void(0)" 
+              onclick="showAlert('Chemical runoff contains harmful substances that contaminate 
+water and kill aquatic life.')"> 
+ 
+        <!-- POLYGON: POLLUTED WATER SURFACE --> 
+        <area shape="poly" 
+              coords="50,360,350,380,600,450,300,480" 
+              href="javascript:void(0)" 
+              onclick="showAlert('Polluted water surface reduces oxygen levels, affecting fish and 
+other organisms.')"> 
+    </map> 
+ 
+    <hr> 
+ 
+    <h3>Responsive Impact View</h3> 
+ 
+    <!-- RESPONSIVE IMAGE USING PICTURE --> 
+    <picture> 
+        <source media="(min-width: 500px)" srcset="https://images.unsplash.com/photo
+1637681316418-dd7a4b6e545e?q=80&w=1074&auto=format&fit=crop&ixlib=rb
+4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"> 
+        <img src="https://images.unsplash.com/photo-1637681316418
+dd7a4b6e545e?q=80&w=1074&auto=format&fit=crop&ixlib=rb
+4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+             alt="Mobile view of pollution"> 
+    </picture> 
+ 
+    <p class="text-content"> 
+        The above image adapts based on screen size using the <strong>&lt;picture&gt;</strong> 
+element, 
+        ensuring better viewing on different devices. 
+    </p> 
+ 
+</div> 
+ 
+</body> 
+</html>

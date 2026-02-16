@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Smart University Admission & Course Registration Portal</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background-color:#f5f5f5;
+    margin:20px;
+}
+h1{
+    text-align:center;
+}
+form{
+    max-width:1100px;
+    margin:auto;
+    background:white;
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+fieldset{
+    margin-bottom:20px;
+    padding:15px;
+    border-radius:8px;
+}
+legend{
+    font-weight:bold;
+    font-size:18px;
+}
+.flex{
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+}
+.flex div{
+    flex:1 1 45%;
+    display:flex;
+    flex-direction:column;
+}
+label{
+    margin-top:8px;
+}
+input, select, textarea{
+    padding:6px;
+    margin-top:5px;
+}
+button, input[type="image"]{
+    margin-top:10px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Smart University Admission & Course Registration Portal</h1>
+
+<form action="submit.html" method="POST" autocomplete="on"
+oninput="total.value=parseInt(course_fee.value||0)+parseInt(hostel_fee.value||0)">
+
+<input type="hidden" name="internal_code" value="UNI2026">
+
+<!-- SECTION 1 -->
+<fieldset>
+<legend>Student Details</legend>
+
+<div class="flex">
+
+<div>
+<label for="name">Full Name:</label>
+<input type="text" id="name" name="fullname"
+placeholder="Enter your full name"
+maxlength="50"
+required
+autofocus>
+</div>
+
+<div>
+<label for="email">Email:</label>
+<input type="email" id="email" name="email"
+required autocomplete="off">
+</div>
+
+<div>
+<label for="phone">Phone Number:</label>
+<input type="tel" id="phone" name="phone"
+placeholder="9876543210"
+pattern="[0-9]{10}"
+title="Enter 10 digit phone number">
+</div>
+
+<div>
+<label for="dob">Date of Birth:</label>
+<input type="date" id="dob" name="dob"
+min="1990-01-01"
+max="2010-12-31">
+</div>
+
+<div>
+<label>Gender:</label>
+<input type="radio" name="gender" value="Male"> Male
+<input type="radio" name="gender" value="Female"> Female
+<input type="radio" name="gender" value="Other"> Other
+</div>
+
+<div>
+<label for="photo">Upload Passport Photo:</label>
+<input type="file" id="photo" name="photo">
+</div>
+
+<div>
+<label for="appid">Application ID:</label>
+<input type="text" id="appid" name="application_id"
+value="APP20260214"
+readonly size="20">
+</div>
+
+</div>
+</fieldset>
+
+<!-- SECTION 2 -->
+<fieldset>
+<legend>Course Details</legend>
+
+<label for="program">Select Degree Program:</label>
+<select id="program" name="program">
+<option>B.Tech</option>
+<option>BCA</option>
+<option>B.Sc</option>
+<option>MBA</option>
+</select>
+
+<br><br>
+
+<label for="specialization">Specialization:</label>
+<select id="specialization" name="specialization">
+<optgroup label="Science">
+<option>Computer Science</option>
+<option>Data Science</option>
+</optgroup>
+<optgroup label="Management">
+<option>Finance</option>
+<option>Marketing</option>
+</optgroup>
+</select>
+
+<br><br>
+
+<label for="electives">Elective Subjects:</label>
+<select id="electives" name="electives" multiple size="4">
+<option>AI</option>
+<option>Cyber Security</option>
+<option>Cloud Computing</option>
+<option>IoT</option>
+</select>
+
+<br><br>
+
+<label for="campus">Preferred Campus Location:</label>
+<input list="locations" id="campus" name="campus">
+<datalist id="locations">
+<option value="Bangalore">
+<option value="Mysore">
+<option value="Mangalore">
+<option value="Hubli">
+</datalist>
+
+</fieldset>
+
+<!-- SECTION 3 -->
+<fieldset>
+<legend>Academic & Experience Details</legend>
+
+<label for="percentage">12th Percentage:</label>
+<input type="number" id="percentage" name="percentage"
+min="0" max="100" step="0.1">
+
+<label for="exam">Entrance Exam Score:</label>
+<input type="number" id="exam" name="exam">
+
+<label for="month">Passing Month:</label>
+<input type="month" id="month" name="passing_month">
+
+<label for="week">Preferred Admission Week:</label>
+<input type="week" id="week" name="admission_week">
+
+<label for="datetime">Preferred Interview Date & Time:</label>
+<input type="datetime-local" id="datetime" name="interview_datetime">
+
+<label for="hours">Study Hours Per Day:</label>
+<input type="range" id="hours" name="study_hours"
+min="0" max="12">
+
+</fieldset>
+
+<!-- SECTION 4 -->
+<fieldset>
+<legend>Hostel & Transport</legend>
+
+<label>Require Hostel?</label>
+<input type="radio" name="hostel_required" value="Yes"> Yes
+<input type="radio" name="hostel_required" value="No"> No
+
+<br><br>
+
+<label>Room Type:</label>
+<input type="checkbox" name="room" value="AC"> AC
+<input type="checkbox" name="room" value="Non-AC"> Non-AC
+<input type="checkbox" name="room" value="Sharing"> Sharing
+
+<br><br>
+
+<label for="bus">Bus Route Selection:</label>
+<select id="bus" name="bus_route">
+<option>Route 1</option>
+<option>Route 2</option>
+<option>Route 3</option>
+</select>
+
+<br><br>
+
+<label for="color">Favorite Room Color:</label>
+<input type="color" id="color" name="room_color">
+
+</fieldset>
+
+<!-- SECTION 5 -->
+<fieldset>
+<legend>Additional Information</legend>
+
+<label for="why">Why do you want to join this university?</label>
+<textarea id="why" name="reason" rows="4" cols="50"></textarea>
+
+<label for="marksheet">Upload Marksheet:</label>
+<input type="file" id="marksheet" name="marksheet">
+
+<label for="certificates">Upload Certificates:</label>
+<input type="file" id="certificates" name="certificates" multiple>
+
+<label for="website">Personal Website / Portfolio:</label>
+<input type="url" id="website" name="website">
+
+</fieldset>
+
+<!-- SECTION 6 -->
+<fieldset>
+<legend>Fee Calculation</legend>
+
+<label for="course_fee">Course Fee:</label>
+<input type="number" id="course_fee" name="course_fee" value="0">
+
+<label for="hostel_fee">Hostel Fee:</label>
+<input type="number" id="hostel_fee" name="hostel_fee" value="0">
+
+<label>Total Fee:</label>
+<output name="total">0</output>
+
+</fieldset>
+
+<!-- SECTION 7 -->
+<fieldset>
+<legend>Submission</legend>
+
+<button type="button" onclick="alert('Please verify your details before submitting')">
+Check Details
+</button>
+
+<button type="submit">Submit Application</button>
+
+<button type="reset">Reset Form</button>
+
+<br><br>
+
+<input type="image" src="submit.png" alt="Submit"
+height="50" width="120">
+
+</fieldset>
+
+</form>
+
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Online Event Registration & Feedback System</title>
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f9;
+    margin: 20px;
+}
+h1{
+    text-align: center;
+}
+form{
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+}
+fieldset{
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 6px;
+}
+legend{
+    font-weight: bold;
+}
+label{
+    display: block;
+    margin-top: 10px;
+}
+input, textarea{
+    width: 100%;
+    padding: 6px;
+    margin-top: 5px;
+}
+input[type="radio"],
+input[type="checkbox"],
+input[type="range"],
+input[type="color"],
+input[type="image"],
+input[type="button"],
+input[type="submit"],
+input[type="reset"]{
+    width: auto;
+}
+</style>
+
+</head>
+<body>
+
+<h1>Online Technical Event Registration & Feedback System</h1>
+
+<form action="submit.html" method="POST" autocomplete="on" target="_blank">
+
+<input type="hidden" name="registration_id" value="REG2026">
+<fieldset>
+<legend>Participant Basic Details</legend>
+
+<label for="fullname">Full Name:</label>
+<input type="text" id="fullname" name="fullname" required>
+<label for="email">Email Address:</label>
+<input type="email" id="email" name="email" required>
+<label for="phone">Phone Number:</label>
+<input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required>
+<label for="dob">Date of Birth:</label>
+<input type="date" id="dob" name="dob" min="1990-01-01" max="2010-12-31" required>
+<label for="contacttime">Preferred Contact Time:</label>
+<input type="time" id="contacttime" name="contacttime" required>
+<label for="studentid">Upload Student ID Card:</label>
+<input type="file" id="studentid" name="studentid" required>
+
+</fieldset>
+
+<fieldset>
+<legend>Event Selection</legend>
+
+<label>Select Event Category:</label>
+<input type="radio" name="event_category" value="Web Development" required> Web Development
+<input type="radio" name="event_category" value="AI & ML"> AI & ML
+<input type="radio" name="event_category" value="Cyber Security"> Cyber Security
+<input type="radio" name="event_category" value="Cloud Computing"> Cloud Computing
+
+<br><br>
+
+<label>Select Workshops Interested In:</label>
+<input type="checkbox" name="workshop" value="HTML & CSS"> HTML & CSS
+<input type="checkbox" name="workshop" value="JavaScript"> JavaScript
+<input type="checkbox" name="workshop" value="Python Programming"> Python Programming
+<input type="checkbox" name="workshop" value="Data Science"> Data Science
+<input type="checkbox" name="workshop" value="Ethical Hacking"> Ethical Hacking
+
+</fieldset>
+
+<fieldset>
+<legend>Schedule & Availability</legend>
+
+<label for="month">Select Preferred Month:</label>
+<input type="month" id="month" name="month" required>
+
+<label for="datetime">Select Preferred Date & Time:</label>
+<input type="datetime-local" id="datetime" name="datetime" required>
+
+<label for="week">Select Week Availability:</label>
+<input type="week" id="week" name="week" required>
+</fieldset>
+
+<fieldset>
+<legend>Experience & Preferences</legend>
+
+<label for="experience">Years of Experience:</label>
+<input type="number" id="experience" name="experience" min="0" max="10" required>
+
+<label for="confidence">Skill Confidence Level (0-10):</label>
+<input type="range" id="confidence" name="confidence" min="0" max="10">
+
+<label for="color">Favorite Theme Color:</label>
+<input type="color" id="color" name="color">
+
+<label for="search">Search Event Topics:</label>
+<input type="search" id="search" name="search">
+
+</fieldset>
+
+<fieldset>
+<legend>Additional Information</legend>
+
+<label for="feedback">Short Feedback / Message:</label>
+<textarea id="feedback" name="feedback" rows="4" required></textarea>
+
+<label for="resume">Upload Resume:</label>
+<input type="file" id="resume" name="resume" required>
+
+<label for="portfolio">Provide Portfolio Link (Optional):</label>
+<input type="url" id="portfolio" name="portfolio">
+
+</fieldset>
+
+<fieldset>
+<legend>Payment Section</legend>
+
+<label for="tickets">Quantity of Tickets (1-5):</label>
+<input type="number" id="tickets" name="tickets" min="1" max="5" required>
+
+<br><br>
+
+<input type="image" src="submit.png" alt="Submit" width="100" height="40">
+
+<input type="submit" value="Submit Form">
+
+<input type="reset" value="Reset Form">
+
+<input type="button" value="Click Me" onclick="alert('Registration Successful!')">
+
+</fieldset>
+
+</form>
+
+</body>
+</html>

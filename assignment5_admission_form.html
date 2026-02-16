@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online College Admission Registration Form</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+            background-color: #f4f6f9;
+        }
+
+        h1 {
+            text-align: center;
+            color: darkblue;
+        }
+
+        p.description {
+            text-align: center;
+            font-size: 14px;
+        }
+
+        form {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0px 0px 8px gray;
+        }
+
+        fieldset {
+            margin-bottom: 20px;
+            padding: 15px;
+        }
+
+        legend {
+            font-weight: bold;
+            color: darkgreen;
+        }
+
+        label {
+            display: inline-block;
+            width: 180px;
+            margin-bottom: 8px;
+        }
+
+        input, select, textarea {
+            margin-bottom: 10px;
+        }
+
+        .buttons {
+            text-align: center;
+        }
+
+        .info-section {
+            background-color: #ffffff;
+            padding: 15px;
+            border-radius: 6px;
+            box-shadow: 0px 0px 5px gray;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Online Admission Registration Form</h1>
+
+    <p class="description">
+        This form collects student information for admission into various college programs. 
+        Please fill all required details carefully before submitting.
+    </p>
+
+    <!-- Main Admission Form -->
+    <form action="/submit_admission.php" method="POST" target="_blank" autocomplete="on">
+
+        <!-- Hidden Field -->
+        <input type="hidden" name="application_id" value="APP2026001">
+
+        <fieldset>
+            <legend>Student Personal Details</legend>
+
+            <label>Full Name:</label>
+            <input type="text" name="fullname" required><br>
+
+            <label>Create Password:</label>
+            <input type="password" name="password" required><br>
+
+            <label>Email ID:</label>
+            <input type="email" name="email" required><br>
+
+            <label>Mobile Number:</label>
+            <input type="tel" name="mobile" required><br>
+
+            <label>Date of Birth:</label>
+            <input type="date" name="dob"><br>
+
+            <label>12th Percentage:</label>
+            <input type="number" name="percentage" min="0" max="100"><br>
+
+            <label>Favorite Color:</label>
+            <input type="color" name="favcolor"><br>
+
+            <label>Upload Documents:</label>
+            <input type="file" name="documents"><br>
+
+        </fieldset>
+
+        <fieldset>
+            <legend>Course Selection</legend>
+
+            <label>Select Gender:</label>
+            <input type="radio" name="gender" value="Male"> Male
+            <input type="radio" name="gender" value="Female"> Female
+            <input type="radio" name="gender" value="Other"> Other
+            <br><br>
+
+            <label>Select Hobbies:</label>
+            <input type="checkbox" name="hobby" value="Sports"> Sports
+            <input type="checkbox" name="hobby" value="Music"> Music
+            <input type="checkbox" name="hobby" value="Reading"> Reading
+            <br><br>
+
+            <label>Select Course:</label>
+            <select name="course">
+                <optgroup label="Engineering Department">
+                    <option value="CSE">Computer Science Engineering</option>
+                    <option value="ECE">Electronics & Communication</option>
+                </optgroup>
+                <optgroup label="Management Department">
+                    <option value="BBA">BBA</option>
+                    <option value="MBA">MBA</option>
+                </optgroup>
+            </select>
+            <br>
+
+            <label>City:</label>
+            <input list="cities" name="city">
+            <datalist id="cities">
+                <option value="Bangalore">
+                <option value="Hyderabad">
+                <option value="Chennai">
+                <option value="Mumbai">
+            </datalist>
+            <br>
+
+            <label>Search Course:</label>
+            <input type="search" name="searchcourse"><br>
+
+            <label>LinkedIn Profile:</label>
+            <input type="url" name="linkedin"><br>
+
+            <label>Rate Communication Skill (1-10):</label>
+            <input type="range" name="communication" min="1" max="10"><br>
+
+        </fieldset>
+
+        <fieldset>
+            <legend>Additional Information</legend>
+
+            <label>Address:</label>
+            <textarea name="address" rows="4" cols="30"></textarea><br>
+
+            <label>Entrance Marks (Maths):</label>
+            <input type="number" id="maths" value="0"><br>
+
+            <label>Entrance Marks (Physics):</label>
+            <input type="number" id="physics" value="0"><br>
+
+            <label>Total Marks:</label>
+            <output id="total">0</output><br>
+
+            <button type="button" onclick="total.value=parseInt(maths.value)+parseInt(physics.value)">
+                Calculate Total
+            </button>
+
+        </fieldset>
+
+        <fieldset>
+            <legend>Date & Time Inputs</legend>
+
+            <label>Preferred Time:</label>
+            <input type="time" name="time"><br>
+
+            <label>Preferred Week:</label>
+            <input type="week" name="week"><br>
+
+            <label>Preferred Month:</label>
+            <input type="month" name="month"><br>
+
+            <label>Date & Time of Submission:</label>
+            <input type="datetime-local" name="datetime"><br>
+
+        </fieldset>
+
+        <div class="buttons">
+            <input type="submit" value="Submit Application">
+            <input type="reset" value="Reset Form">
+            <input type="button" value="Click Me">
+            <input type="image" src="https://via.placeholder.com/80x30" alt="Submit">
+        </div>
+
+    </form>
+
+    <!-- Second Small Form Demonstrating novalidate -->
+    <form novalidate>
+        <fieldset>
+            <legend>Example Form (No Validation)</legend>
+            <label>Email (No Validation):</label>
+            <input type="email" name="testemail">
+            <input type="submit" value="Submit Without Validation">
+        </fieldset>
+    </form>
+
+    <!-- Method Understanding Section -->
+    <div class="info-section">
+        <h3>Difference Between GET and POST</h3>
+        <p>
+            GET method sends data through the URL and is visible in the browser address bar. 
+            It is suitable for non-sensitive data and has length limitations.
+            POST method sends data inside the HTTP request body and is not visible in the URL. 
+            It is more secure and does not have size limitations like GET.
+        </p>
+
+        <p>
+            POST is preferred for admission forms because student details such as password, 
+            personal data, and uploaded documents must remain secure and confidential.
+        </p>
+    </div>
+
+</body>
+</html>
